@@ -1,0 +1,49 @@
+.email-container{
+    width: 100%;
+    min-height:  100vh;
+    background-color: #060a23;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.email-inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.email-inputs label{
+margin: 5px 0px;
+}
+.email-inputs input{
+    padding: 10px;
+    width: 250px;
+    /* font-size: 1.1rem; */
+    border-radius: 15px;
+    border: none;
+    border: 2px solid #383a47;
+    background-color: #060a23;
+    outline: none;
+    color: white;
+  }
+
+.email-submit button{
+    padding: 10px 20px;
+    width: 250px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #571AE8;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    }
+
+
+    .response_message{
+        color:  green;
+        font-size: 18px;
+        text-align: center;
+    }
