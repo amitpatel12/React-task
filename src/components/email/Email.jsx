@@ -14,7 +14,7 @@ const Email = () => {
         const emailData = new FormData()
         emailData.append('store_email', email)
 
-      let response = await axios.post(`http://45.64.156.214:9093/password-forget-email/`, emailData)
+      let response = await axios.post(`https://45.64.156.214:9093/password-forget-email/`, emailData)
       response = response.data
       
         setMessage(response.message)
@@ -52,7 +52,7 @@ const Email = () => {
 
           <div className="email-submit">
             <button type="submit" onClick={handleData}>
-              Send OTP
+              Send Mail
             </button>
           </div>
     </div>
