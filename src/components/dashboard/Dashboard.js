@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Drawer,
   Typography,
   backdropClasses,
@@ -14,7 +15,7 @@ import Person2Icon from "@mui/icons-material/Person2";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import { Padding, Style } from "@mui/icons-material";
 import "./dashboard.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const DashboardContainer = styled(Box)`
   background: rgb(2, 0, 36);
@@ -88,6 +89,9 @@ background-color:gray;
 padding: 50px;
 `
 
+
+
+
 const Dashboard = () => {
   const [open, setOpen] = useState(true);
   const navigate = useNavigate()
@@ -103,6 +107,15 @@ const Dashboard = () => {
         navigate('/')
     }
   }, [token]);
+
+
+  const handleLogout = (e) => {
+    console.log("logout")
+    localStorage.clear()
+    navigate('/')
+  }
+
+
   return (
     <DashboardContainer>
       <Drawer
@@ -146,6 +159,9 @@ const Dashboard = () => {
           <Person2Icon />
           <span style={{ marginLeft: "10px" }}>Profile</span>
         </BoxRow>
+        
+      
+            <>
         <BoxRow>
           <VpnKeyIcon />
           <span style={{ marginLeft: "10px" }}>SignIn</span>
@@ -154,14 +170,17 @@ const Dashboard = () => {
           <Padding />
           <span style={{ marginLeft: "10px" }}>SignUp</span>
         </BoxRow>
+        </>
+       
       </Drawer>
 
       <Box
         style={{
           color: "white",
-          marginLeft: "25%",
+          marginLeft: "30%",
           marginTop: "50px",
           fontSize: "30px",
+          zIndex: '1502'
         }}
       >
         <Box>Welcome to Dashboard - {user.chk_user_first_name}</Box>
@@ -196,7 +215,12 @@ const Dashboard = () => {
           </Typography>
         </InfoContainer>
         )}
+ <button type="submit" onClick={handleLogout}className="logoutButton">
+              LOGOUT
+            </button>
+        
       </Box>
+     
     </DashboardContainer>
       
   );
